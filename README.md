@@ -14,7 +14,7 @@ A simple tool to analyze `.pcap` files using scapy
 - Scapy
 
 <details>
-<summary><strong>🍎 macOS / 🐧Linux</strong></summary>
+<summary><strong>  macOS / 🐧Linux</strong></summary>
 
 ```bash
 pip3 install scapy

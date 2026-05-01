@@ -1,11 +1,11 @@
 # Basic Network Log Analyzer
-A simple tool to analyze `.pcap` files using scapy
+A simple tool to analyze `.pcap` files using Scapy.
 
 ## Features
-- Count number of requests per IP
+- Count the number of requests per IP
 - Detect suspicious ports
-- Basic spam detect (based on requests volume)
-- Log analysis results in `log.txt` file
+- Basic spam detection based on request volume
+- Log analysis results to `log.txt`
 
 ## Usage
 
@@ -14,7 +14,7 @@ A simple tool to analyze `.pcap` files using scapy
 - Scapy
 
 <details>
-<summary><strong>  macOS / 🐧Linux</strong></summary>
+<summary><strong> macOS / 🐧 Linux</strong></summary>
 
 ```bash
 pip3 install scapy
@@ -33,9 +33,7 @@ python basic-network-tool.py
 
 </details>
 
-### Notes
+## Notes
 - Place your `.pcap` file in the same directory as the script  
   or modify the filename inside the code.
-  
-## Notes
-- This is the early version, this tool will be improved later.
+- This is an early version of the tool and will be improved over time.

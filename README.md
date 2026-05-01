@@ -6,7 +6,7 @@ A simple tool to analyze `.pcap` files using scapy
 - Detect suspicious ports
 - Basic spam detect (based on requests volume)
 - Log analysis results in `log.txt` file
-## Usage
+
 ## Usage
 
 ### Requirements
@@ -14,7 +14,7 @@ A simple tool to analyze `.pcap` files using scapy
 - Scapy
 
 <details>
-<summary><strong>🍎 macOS / Linux</strong></summary>
+<summary><strong>🍎 macOS / 🐧Linux</strong></summary>
 
 ```bash
 pip3 install scapy

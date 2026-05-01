@@ -7,8 +7,7 @@ A simple tool to analyze `.pcap` files using scapy
 - Basic spam detect (based on requests volume)
 - Log analysis results in `log.txt` file
 ## Usage
-```
-  bash
+``` bash
   pip install scapy
   python basic-network-tool.py
 ```

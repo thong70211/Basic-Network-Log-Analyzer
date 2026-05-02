@@ -14,11 +14,21 @@ A simple tool to analyze `.pcap` files using Scapy.
 - Scapy
 
 <details>
+<summary><strong>🐍 Download Python</strong></summary>
+
+https://www.python.org/downloads/
+
+</details>
+
+---
+
+### Install Scapy
+
+<details>
 <summary><strong> macOS / 🐧 Linux</strong></summary>
 
 ```bash
 pip3 install scapy
-python3 basic-network-tool.py
 ```
 
 </details>
@@ -28,12 +38,35 @@ python3 basic-network-tool.py
 
 ```bash
 pip install scapy
-python basic-network-tool.py
 ```
 
 </details>
 
+---
+
+### Run the tool
+
+<details>
+<summary><strong> macOS / 🐧 Linux</strong></summary>
+
+```bash
+python3 basic-network-tool.py <your_file_path>.pcap
+```
+
+</details>
+
+<details>
+<summary><strong>🪟 Windows</strong></summary>
+
+```bash
+python basic-network-tool.py <your_file_path>.pcap
+```
+
+</details>
+
+---
+
 ## Notes
-- Place your `.pcap` file in the same directory as the script  
-  or modify the filename inside the code.
-- This is an early version of the tool and will be improved over time.
+- Replace `<your_file_path>.pcap` with your actual file
+- You can place the `.pcap` file in the same directory or use a full path
+- This is an early version of the tool and will be improved over time

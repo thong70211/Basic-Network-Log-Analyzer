@@ -18,7 +18,7 @@ logging.basicConfig(
 """
 Popular ports list (Whitelisted Ports):
 80 (HTTP), 443 (HTTPS/QUIC), 53 (DNS), 22 (SSH), 
-25/465/587 (SMTP), 993 (IMAP)
+25/465/587 (SMTP), 993 (IMAP), 21 (FTP)
 """
 ALLOWED_PORTS = {
     80, #HTTP
@@ -28,7 +28,8 @@ ALLOWED_PORTS = {
     25, #SMTP
     465, #SMTPS
     587, #SMTP (submission)
-    993 #IMAP
+    993, #IMAP
+    21 #FTP
     }
 
 # NOTE: Adjust this threshold based on system behavior.
@@ -48,6 +49,7 @@ def analyze_pcap(file_name):
         return
 
     ip_count = {}
+    suspicious_ports_count = {}
 
     for pkt in packets:
         if pkt.haslayer(TCP) and pkt.haslayer(IP):
@@ -57,18 +59,21 @@ def analyze_pcap(file_name):
             ip_count[src_ip] = ip_count.get(src_ip, 0) + 1
             
             if dst_port not in ALLOWED_PORTS:
-                msg = f"Suspicious port {dst_port} requested from IP {src_ip} "
+                key = (src_ip, dst_port)
+                suspicious_ports_count[key] = suspicious_ports_count.get(key, 0) + 1
 
-                print(msg) 
-                logging.warning(msg) 
+    for (src_ip, dst_port), count in suspicious_ports_count.items():
+            msg = f"Suspicious port {dst_port} accessed {count} times by IP: {src_ip}"
 
+            print(msg)
+            logging.warning(msg)
+    
     for ip,count in ip_count.items():
         if (count > SPAM_THRESHOLD):
             msg = f"Possible spam detected from {ip}, total request: {count}"
 
             print(msg)
             logging.warning(msg) 
-
 """
 ====================================
     MAIN
